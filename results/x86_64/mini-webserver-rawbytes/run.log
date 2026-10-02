@@ -1,0 +1,44 @@
+=== NLC raw-bytes loop start: results/x86_64/mini-webserver-rawbytes (arch=x86_64, model=claude-sonnet-5-5, max_iters=15) ===
+
+--- Iteration 1 ---
+Generated 437 bytes of hex -> results/x86_64/mini-webserver-rawbytes/main.hex
+readelf validates the ELF header OK.
+SMOKE TEST FAILED (rc=1):
+Server process exited early. Output:
+results/x86_64/mini-webserver-rawbytes/smoke_test.sh: line 16: results/x86_64/mini-webserver-rawbytes/app: cannot execute binary file: Exec format error
+
+--- Iteration 2 ---
+Generated 440 bytes of hex -> results/x86_64/mini-webserver-rawbytes/main.hex
+readelf validates the ELF header OK.
+SMOKE TEST FAILED (rc=1):
+Server process exited early. Output:
+results/x86_64/mini-webserver-rawbytes/smoke_test.sh: line 16: results/x86_64/mini-webserver-rawbytes/app: cannot execute binary file: Exec format error
+
+--- Iteration 3 ---
+Generated 439 bytes of hex -> results/x86_64/mini-webserver-rawbytes/main.hex
+readelf validates the ELF header OK.
+SMOKE TEST FAILED (rc=1):
+Server process exited early. Output:
+results/x86_64/mini-webserver-rawbytes/smoke_test.sh: line 16: results/x86_64/mini-webserver-rawbytes/app: cannot execute binary file: Exec format error
+
+--- Iteration 4 ---
+Generated 891 bytes of hex -> results/x86_64/mini-webserver-rawbytes/main.hex
+WARNING: odd hex digit count, truncated last nibble.
+readelf validates the ELF header OK.
+SMOKE TEST FAILED (rc=1):
+Server process exited early. Output:
+results/x86_64/mini-webserver-rawbytes/smoke_test.sh: line 16: results/x86_64/mini-webserver-rawbytes/app: cannot execute binary file: Exec format error
+
+--- Iteration 5 ---
+Generated 438 bytes of hex -> results/x86_64/mini-webserver-rawbytes/main.hex
+readelf validates the ELF header OK.
+SMOKE TEST FAILED (rc=1):
+curl failed with rc=18 (server output so far:)
+Listening on port 8125
+
+--- Iteration 6 ---
+Generated 439 bytes of hex -> results/x86_64/mini-webserver-rawbytes/main.hex
+readelf validates the ELF header OK.
+SMOKE TEST PASSED.
+
+=== RESULT: SUCCESS after 6/15 iteration(s) ===

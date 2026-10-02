@@ -85,22 +85,50 @@ Highlights:
 
 ## Requirements
 
-- Linux on AArch64 (targets are ARM64; no emulation layer assumed).
+- Linux on AArch64 or x86-64 (no emulation layer assumed; pick with `ARCH`).
 - Bash, `xxd`, `readelf`, `curl`, `python3` (for verifier scripts), GNU
   `binutils` (`as`, `ld`) and `gcc` for variants A/B.
 - Claude CLI authenticated, with the `fable` model available.
 
 ## Portability / status
 
-Everything here is **AArch64-only** today (specs, prompts and verifiers pin
-AArch64 syscall numbers, `svc #0`, and ELF `e_machine`). x86-64 support is the
-next step: parametrize the architecture in the three `harness/run_loop*.sh`
-prompts (syscall ABI, instruction encoding, ELF machine type) and in each
-example's `spec.md`, then validate on real Intel hardware.
+The asm and raw-bytes harnesses take an architecture from `harness/arch.sh`:
+`ARCH=aarch64|x86_64` (default: `uname -m`). It selects the syscall ABI /
+ELF rules injected in the prompt, and the spec: `spec.<arch>.md` if present,
+else `spec.md`. AArch64 specs and results are unchanged; x86-64 specs live
+next to them as `spec.x86_64.md` (variant A, C, hello-world and the
+architecture-neutral specs need none).
+
+```sh
+ARCH=x86_64 harness/run_loop_asm.sh results/x86_64/hello-world-asm 6 <model>
+```
+
+### x86-64 results
+
+Generated sources and logs are in `results/x86_64/<example>/` (run on a real
+Intel laptop, native Linux x86-64). **Model: `claude-sonnet-5-5`** — not
+`fable`, so iteration counts are not comparable with the AArch64 table above.
+
+| Example | Variant | Result | Binary size |
+|---|---|---:|---:|
+| `hello-world` | C | 1/5 | — |
+| `hello-world-asm` | asm | 1/6 | — |
+| `hello-world-rawbytes` | raw bytes | 1/8 | 165 B |
+| `mini-webserver` | C | 2/6 | — |
+| `mini-webserver-asm` | asm | 2/8 | — |
+| `mini-webserver-rawbytes` | raw bytes | 6/15 | 439 B |
+| `x11-m1-handshake-asm` | asm | 1/6 | 9,344 B |
+| `tetris-t1-core-asm` | asm (X11) | 5/25 | 8,032 B |
+
+Notes: the first raw-bytes attempt failed 8/8 and 15/15 (an extra hex digit in
+a long zero run shifts every later ELF field). After `run_loop_rawbytes.sh`
+started feeding back the size and `readelf -lh` of the built file on smoke-test
+failure, both passed (the failed logs are kept as `run.v1-failed.log`). The
+`x11-m2`…`m6`, `final-demo` and Doom/cube/plasma examples have not been ported.
 
 X11 examples: `spec.md` contains `@@XAUTH_COOKIE@@` instead of a cookie; the
 harness fills it at run time from `xauth list $DISPLAY` (`harness/xauth_cookie.sh`).
-The committed `main.s` files have the cookie bytes zeroed, so they won't
+The committed `main.s` files (AArch64 and x86-64) have the cookie bytes zeroed, so they won't
 authenticate as-is — re-run the loop on your own machine to regenerate them.
 
 ## Notes

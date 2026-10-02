@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# NLC loop harness — variant B: LLM writes raw AArch64 assembly (Linux
+# NLC loop harness — variant B: LLM writes raw $ARCH_LABEL assembly (Linux
 # syscalls directly, no libc), assembled with `as` and linked with `ld`.
 # No compiler involved — as/ld only translate/link, they don't parse or
 # codegen from a high-level language.
@@ -9,11 +9,13 @@
 
 set -uo pipefail
 
+source "$(dirname "$0")/arch.sh" || exit 1
+
 EXAMPLE_DIR="$1"
 MAX_ITERS="${2:-6}"
 MODEL="${3:-fable}"
 
-SPEC_FILE="$EXAMPLE_DIR/spec.md"
+SPEC_FILE="$(spec_path "$EXAMPLE_DIR")"
 SMOKE_TEST="$EXAMPLE_DIR/smoke_test.sh"
 LOG_FILE="$EXAMPLE_DIR/run.log"
 SRC_FILE="$EXAMPLE_DIR/main.s"
@@ -34,22 +36,16 @@ fi
 FEEDBACK=""
 SUCCESS=0
 
-log "=== NLC asm loop start: $EXAMPLE_DIR (model=$MODEL, max_iters=$MAX_ITERS) ==="
+log "=== NLC asm loop start: $EXAMPLE_DIR (arch=$ARCH, model=$MODEL, max_iters=$MAX_ITERS) ==="
 
-BASE_RULES="Target: Linux AArch64 (ARM64), GNU assembler (GAS) syntax.
-Rules:
-- Raw Linux syscalls only (svc #0, syscall number in x8, args in x0-x5, return in x0). NO libc, NO C library calls, NO crt startup.
-- Must define '.global _start' as the entry point (not 'main').
-- Must end by calling the exit_group syscall (number 94) directly — do not fall off the end.
-- Relevant AArch64 Linux syscall numbers: read=63 write=64 exit=93 exit_group=94 socket=198 bind=200 listen=201 accept=202 close=57.
-- socket/bind/accept struct layouts follow standard Linux sockaddr_in (AF_INET=2)."
+BASE_RULES="$ASM_RULES"
 
 for i in $(seq 1 "$MAX_ITERS"); do
   log ""
   log "--- Iteration $i ---"
 
   if [ -z "$FEEDBACK" ]; then
-    PROMPT="You are an AArch64 assembly code generator. Write raw GNU assembler (AT&T is irrelevant on ARM, use standard GAS AArch64 mnemonics) that satisfies this specification:
+    PROMPT="You are an $ARCH_LABEL assembly code generator. Write raw GNU assembler (use standard GAS $ARCH_LABEL mnemonics) that satisfies this specification:
 
 $SPEC
 
@@ -57,7 +53,7 @@ $BASE_RULES
 
 Output ONLY the raw assembly source, no markdown fences, no explanation, no comments needed (a few short comments are fine but keep it minimal)."
   else
-    PROMPT="Your previous AArch64 assembly program failed. Original spec:
+    PROMPT="Your previous $ARCH_LABEL assembly program failed. Original spec:
 
 $SPEC
 

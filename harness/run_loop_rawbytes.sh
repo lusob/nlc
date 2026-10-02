@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# NLC loop harness — variant C: LLM emits the raw ELF64 AArch64 executable
+# NLC loop harness — variant C: LLM emits the raw ELF64 $ARCH_LABEL executable
 # bytes directly (hex), with NO assembler, NO linker, NO compiler at all.
 # The harness only converts hex -> binary and chmod +x's it.
 #
@@ -8,11 +8,13 @@
 
 set -uo pipefail
 
+source "$(dirname "$0")/arch.sh" || exit 1
+
 EXAMPLE_DIR="$1"
 MAX_ITERS="${2:-8}"
 MODEL="${3:-fable}"
 
-SPEC_FILE="$EXAMPLE_DIR/spec.md"
+SPEC_FILE="$(spec_path "$EXAMPLE_DIR")"
 SMOKE_TEST="$EXAMPLE_DIR/smoke_test.sh"
 LOG_FILE="$EXAMPLE_DIR/run.log"
 HEX_FILE="$EXAMPLE_DIR/main.hex"
@@ -32,19 +34,16 @@ fi
 FEEDBACK=""
 SUCCESS=0
 
-log "=== NLC raw-bytes loop start: $EXAMPLE_DIR (model=$MODEL, max_iters=$MAX_ITERS) ==="
+log "=== NLC raw-bytes loop start: $EXAMPLE_DIR (arch=$ARCH, model=$MODEL, max_iters=$MAX_ITERS) ==="
 
-BASE_RULES="Target: Linux ELF64, AArch64 (ARM64) architecture, little-endian, statically linked, no dynamic loader.
-You must emit the COMPLETE raw bytes of a working ELF64 executable: ELF header, one PT_LOAD program header, and the AArch64 machine code instructions (encoded by hand as raw 32-bit little-endian words — you know the AArch64 instruction encoding), using raw Linux syscalls (svc #0, syscall number in x8, args in x0-x5). No libc, no crt, no relocations, no sections needed — just a minimal valid ELF64 with e_entry pointing at your code within the single PT_LOAD segment.
-Relevant AArch64 Linux syscall numbers: write=64 exit=93 exit_group=94.
-Output format: ONLY a continuous stream of hex digit pairs representing every byte of the file in order, nothing else — no spaces required but allowed, no markdown fences, no explanation, no 0x prefixes."
+BASE_RULES="$RAW_RULES"
 
 for i in $(seq 1 "$MAX_ITERS"); do
   log ""
   log "--- Iteration $i ---"
 
   if [ -z "$FEEDBACK" ]; then
-    PROMPT="You are a raw ELF64/AArch64 machine code generator. Produce a minimal, valid, statically-linked ELF64 executable (as raw hex bytes) that satisfies this specification:
+    PROMPT="You are a raw ELF64/$ARCH_LABEL machine code generator. Produce a minimal, valid, statically-linked ELF64 executable (as raw hex bytes) that satisfies this specification:
 
 $SPEC
 
@@ -110,7 +109,10 @@ $READELF_ERR"
     log "SMOKE TEST FAILED (rc=$SMOKE_RC):"
     log "$SMOKE_ERR"
     FEEDBACK="ELF header parsed but running it failed the smoke test:
-$SMOKE_ERR"
+$SMOKE_ERR
+
+Your file is $(wc -c < "$BIN_FILE") bytes. This is what readelf actually decoded from your bytes (compare against what you intended — a single extra or missing hex digit in a long run of zeros shifts every later field):
+$(readelf -lh "$BIN_FILE" 2>&1 | grep -E 'Machine|Entry|Type:|LOAD|Offset|FileSiz|MemSiz|Flags' | head -20)"
     continue
   fi
 

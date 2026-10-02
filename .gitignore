@@ -3,3 +3,11 @@
 __pycache__/
 examples/*/app
 examples/tetris-t1-core-asm/tetris_c_static
+
+# x86_64 run dirs hold working copies of the specs/tests; only generated sources + logs are tracked
+results/*/*/spec*.md
+results/*/*/smoke_test.sh
+results/*/*/verify.py
+results/*/*/app.o
+results/*/*/xxd_err.txt
+results/*/*/app

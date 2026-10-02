@@ -1,0 +1,114 @@
+=== NLC raw-bytes loop start: results/x86_64/mini-webserver-rawbytes (arch=x86_64, model=claude-sonnet-5-5, max_iters=15) ===
+
+--- Iteration 1 ---
+Generated 514 bytes of hex -> results/x86_64/mini-webserver-rawbytes/main.hex
+NOT A VALID ELF FILE:
+readelf: Error: Not an ELF file - it has the wrong magic bytes at the start
+
+--- Iteration 2 ---
+Generated 426 bytes of hex -> results/x86_64/mini-webserver-rawbytes/main.hex
+readelf validates the ELF header OK.
+SMOKE TEST FAILED (rc=1):
+Server process exited early. Output:
+results/x86_64/mini-webserver-rawbytes/smoke_test.sh: line 16: results/x86_64/mini-webserver-rawbytes/app: cannot execute binary file: Exec format error
+
+--- Iteration 3 ---
+Generated 426 bytes of hex -> results/x86_64/mini-webserver-rawbytes/main.hex
+WARNING: odd hex digit count, truncated last nibble.
+readelf validates the ELF header OK.
+SMOKE TEST FAILED (rc=1):
+Server never printed 'Listening on port 8125' within 3s. Output so far:
+Æ—7FVæ–æröâ÷'Bƒ#P
+
+--- Iteration 4 ---
+Generated 426 bytes of hex -> results/x86_64/mini-webserver-rawbytes/main.hex
+WARNING: odd hex digit count, truncated last nibble.
+readelf validates the ELF header OK.
+SMOKE TEST FAILED (rc=1):
+results/x86_64/mini-webserver-rawbytes/smoke_test.sh: line 19: 381302 Illegal instruction     (core dumped) "$BIN" > "$OUT_FILE" 2>&1
+Server process exited early. Output:
+
+--- Iteration 5 ---
+Generated 871 bytes of hex -> results/x86_64/mini-webserver-rawbytes/main.hex
+WARNING: odd hex digit count, truncated last nibble.
+readelf validates the ELF header OK.
+SMOKE TEST FAILED (rc=1):
+results/x86_64/mini-webserver-rawbytes/smoke_test.sh: line 19: 382189 Illegal instruction     (core dumped) "$BIN" > "$OUT_FILE" 2>&1
+Server process exited early. Output:
+
+--- Iteration 6 ---
+Generated 419 bytes of hex -> results/x86_64/mini-webserver-rawbytes/main.hex
+readelf validates the ELF header OK.
+SMOKE TEST FAILED (rc=1):
+Server process exited early. Output:
+results/x86_64/mini-webserver-rawbytes/smoke_test.sh: line 16: results/x86_64/mini-webserver-rawbytes/app: cannot execute binary file: Exec format error
+
+--- Iteration 7 ---
+Generated 416 bytes of hex -> results/x86_64/mini-webserver-rawbytes/main.hex
+WARNING: odd hex digit count, truncated last nibble.
+readelf validates the ELF header OK.
+SMOKE TEST FAILED (rc=1):
+results/x86_64/mini-webserver-rawbytes/smoke_test.sh: line 19: 383970 Illegal instruction     (core dumped) "$BIN" > "$OUT_FILE" 2>&1
+Server process exited early. Output:
+
+--- Iteration 8 ---
+Generated 416 bytes of hex -> results/x86_64/mini-webserver-rawbytes/main.hex
+WARNING: odd hex digit count, truncated last nibble.
+readelf validates the ELF header OK.
+SMOKE TEST FAILED (rc=1):
+results/x86_64/mini-webserver-rawbytes/smoke_test.sh: line 19: 384737 Segmentation fault      (core dumped) "$BIN" > "$OUT_FILE" 2>&1
+Server process exited early. Output:
+
+--- Iteration 9 ---
+Generated 417 bytes of hex -> results/x86_64/mini-webserver-rawbytes/main.hex
+WARNING: odd hex digit count, truncated last nibble.
+readelf validates the ELF header OK.
+SMOKE TEST FAILED (rc=1):
+Server process exited early. Output:
+results/x86_64/mini-webserver-rawbytes/smoke_test.sh: line 19: 386205 Segmentation fault      "$BIN" > "$OUT_FILE" 2>&1
+
+--- Iteration 10 ---
+Generated 418 bytes of hex -> results/x86_64/mini-webserver-rawbytes/main.hex
+readelf validates the ELF header OK.
+SMOKE TEST FAILED (rc=1):
+Server process exited early. Output:
+results/x86_64/mini-webserver-rawbytes/smoke_test.sh: line 19: 387384 Segmentation fault      "$BIN" > "$OUT_FILE" 2>&1
+
+--- Iteration 11 ---
+Generated 148 bytes of hex -> results/x86_64/mini-webserver-rawbytes/main.hex
+WARNING: odd hex digit count, truncated last nibble.
+readelf validates the ELF header OK.
+SMOKE TEST FAILED (rc=1):
+Server process exited early. Output:
+results/x86_64/mini-webserver-rawbytes/smoke_test.sh: line 16: results/x86_64/mini-webserver-rawbytes/app: cannot execute binary file: Exec format error
+
+--- Iteration 12 ---
+Generated 424 bytes of hex -> results/x86_64/mini-webserver-rawbytes/main.hex
+WARNING: odd hex digit count, truncated last nibble.
+readelf validates the ELF header OK.
+SMOKE TEST FAILED (rc=1):
+Server process exited early. Output:
+results/x86_64/mini-webserver-rawbytes/smoke_test.sh: line 16: results/x86_64/mini-webserver-rawbytes/app: cannot execute binary file: Exec format error
+
+--- Iteration 13 ---
+Generated 425 bytes of hex -> results/x86_64/mini-webserver-rawbytes/main.hex
+WARNING: odd hex digit count, truncated last nibble.
+readelf validates the ELF header OK.
+SMOKE TEST FAILED (rc=1):
+Server process exited early. Output:
+results/x86_64/mini-webserver-rawbytes/smoke_test.sh: line 19: 390534 Segmentation fault      "$BIN" > "$OUT_FILE" 2>&1
+
+--- Iteration 14 ---
+Generated 425 bytes of hex -> results/x86_64/mini-webserver-rawbytes/main.hex
+WARNING: odd hex digit count, truncated last nibble.
+readelf validates the ELF header OK.
+SMOKE TEST FAILED (rc=1):
+Server process exited early. Output:
+results/x86_64/mini-webserver-rawbytes/smoke_test.sh: line 19: 391454 Segmentation fault      "$BIN" > "$OUT_FILE" 2>&1
+
+--- Iteration 15 ---
+Generated 111 bytes of hex -> results/x86_64/mini-webserver-rawbytes/main.hex
+NOT A VALID ELF FILE:
+readelf: Error: Not an ELF file - it has the wrong magic bytes at the start
+
+=== RESULT: FAILED after 15 iteration(s) ===
