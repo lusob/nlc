@@ -1,0 +1,5 @@
+# build artifacts (reproducible from the generated sources)
+*.o
+__pycache__/
+examples/*/app
+examples/tetris-t1-core-asm/tetris_c_static

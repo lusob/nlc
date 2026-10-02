@@ -1,0 +1,8 @@
+=== NLC loop start: examples/hello-world (model=fable, max_iters=5) ===
+
+--- Iteration 1 ---
+Generated 7 lines -> examples/hello-world/main.c
+Compile OK.
+SMOKE TEST PASSED.
+
+=== RESULT: SUCCESS after 1/5 iteration(s) ===

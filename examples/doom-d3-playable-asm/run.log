@@ -1,0 +1,14 @@
+=== NLC asm loop start: examples/doom-d3-playable-asm (model=fable, max_iters=30) ===
+
+--- Iteration 1 ---
+Generated 667 lines -> examples/doom-d3-playable-asm/main.s
+ASSEMBLE FAILED:
+examples/doom-d3-playable-asm/main.s: Assembler messages:
+examples/doom-d3-playable-asm/main.s:1: Error: unknown mnemonic `file' -- `file writes were denied in this session,so I can116run`as`/`ld`to verify — I118e hand-checked the instruction encodings(logical immediates,extended-register addressing,scaled halfword indexing)instead. Here is the source:'
+
+--- Iteration 2 ---
+Generated 665 lines -> examples/doom-d3-playable-asm/main.s
+Assemble+link OK.
+SMOKE TEST PASSED.
+
+=== RESULT: SUCCESS after 2/30 iteration(s) ===

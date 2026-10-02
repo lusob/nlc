@@ -1,0 +1,8 @@
+=== NLC asm loop start: examples/plasma-demo-asm (model=fable, max_iters=15) ===
+
+--- Iteration 1 ---
+Generated 88 lines -> examples/plasma-demo-asm/main.s
+Assemble+link OK.
+SMOKE TEST PASSED.
+
+=== RESULT: SUCCESS after 1/15 iteration(s) ===

@@ -1,0 +1,31 @@
+=== NLC raw-bytes loop start: examples/hello-world-rawbytes (model=fable, max_iters=8) ===
+
+--- Iteration 1 ---
+Generated 17 bytes of hex -> examples/hello-world-rawbytes/main.hex
+NOT A VALID ELF FILE:
+readelf: Error: examples/hello-world-rawbytes/app: Failed to read file header
+
+--- Iteration 2 ---
+Generated 168 bytes of hex -> examples/hello-world-rawbytes/main.hex
+readelf validates the ELF header OK.
+SMOKE TEST FAILED (rc=1):
+Exit code was 139, expected 0
+
+--- Iteration 3 ---
+Generated 3 bytes of hex -> examples/hello-world-rawbytes/main.hex
+WARNING: odd hex digit count, truncated last nibble.
+NOT A VALID ELF FILE:
+readelf: Error: examples/hello-world-rawbytes/app: Failed to read file's magic number
+
+--- Iteration 4 ---
+Generated 165 bytes of hex -> examples/hello-world-rawbytes/main.hex
+readelf validates the ELF header OK.
+SMOKE TEST FAILED (rc=1):
+Exit code was 132, expected 0
+
+--- Iteration 5 ---
+Generated 166 bytes of hex -> examples/hello-world-rawbytes/main.hex
+readelf validates the ELF header OK.
+SMOKE TEST PASSED.
+
+=== RESULT: SUCCESS after 5/8 iteration(s) ===

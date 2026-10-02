@@ -1,0 +1,27 @@
+=== NLC raw-bytes loop start: examples/mini-webserver-rawbytes (model=fable, max_iters=15) ===
+
+--- Iteration 1 ---
+Generated 3 bytes of hex -> examples/mini-webserver-rawbytes/main.hex
+WARNING: odd hex digit count, truncated last nibble.
+NOT A VALID ELF FILE:
+readelf: Error: examples/mini-webserver-rawbytes/app: Failed to read file's magic number
+
+--- Iteration 2 ---
+Generated 3 bytes of hex -> examples/mini-webserver-rawbytes/main.hex
+WARNING: odd hex digit count, truncated last nibble.
+NOT A VALID ELF FILE:
+readelf: Error: examples/mini-webserver-rawbytes/app: Failed to read file's magic number
+
+--- Iteration 3 ---
+Generated 802 bytes of hex -> examples/mini-webserver-rawbytes/main.hex
+readelf validates the ELF header OK.
+SMOKE TEST FAILED (rc=1):
+examples/mini-webserver-rawbytes/smoke_test.sh: line 19: 17753 Segmentation fault      (core dumped) "$BIN" > "$OUT_FILE" 2>&1
+Server process exited early. Output:
+
+--- Iteration 4 ---
+Generated 696 bytes of hex -> examples/mini-webserver-rawbytes/main.hex
+readelf validates the ELF header OK.
+SMOKE TEST PASSED.
+
+=== RESULT: SUCCESS after 4/15 iteration(s) ===

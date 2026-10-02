@@ -1,0 +1,29 @@
+=== NLC asm loop start: examples/x11-m1-handshake-asm (model=fable, max_iters=15) ===
+
+--- Iteration 1 ---
+Generated 175 lines -> examples/x11-m1-handshake-asm/main.s
+ASSEMBLE FAILED:
+examples/x11-m1-handshake-asm/main.s: Assembler messages:
+examples/x11-m1-handshake-asm/main.s:173: Error: unknown mnemonic `two' -- `two things worth flagging,since I could not verify this by building it — the sandbox denied both writing the file and running`as`/`ld`,so the code above is unassembled:'
+examples/x11-m1-handshake-asm/main.s:175: Error: unknown mnemonic `the' -- `the spec says`/tmp/.X11-unix/X0`is 18 ASCII bytes'
+examples/x11-m1-handshake-asm/main.s:175: Error: unknown mnemonic `it' -- `it is actually 17. The`sockaddr_un`is still exactly 110 bytes total(2 family+17 path+1 NUL+90 pad),which is what matters for`connect`,but if you were relying on the count of 18 elsewhere it115off by one. Build and run it with`as-o x11_m1.o x11_m1.s&&ld-o x11_m1 x11_m1.o`.'
+
+--- Iteration 2 ---
+Generated 1 lines -> examples/x11-m1-handshake-asm/main.s
+ASSEMBLE FAILED:
+examples/x11-m1-handshake-asm/main.s: Assembler messages:
+examples/x11-m1-handshake-asm/main.s:1: Error: unknown mnemonic `api' -- `api Error:Connection closed mid-response. The response above may be incomplete.'
+
+--- Iteration 3 ---
+Generated 2 lines -> examples/x11-m1-handshake-asm/main.s
+ASSEMBLE FAILED:
+examples/x11-m1-handshake-asm/main.s: Assembler messages:
+examples/x11-m1-handshake-asm/main.s:1: Error: unknown mnemonic `the' -- `the previous response was truncated by an API error,so the file contained an error message instead of code. I108l write the complete program and verify it assembles and links before outputting it.'
+examples/x11-m1-handshake-asm/main.s:2: Error: unknown mnemonic `api' -- `api Error:Connection closed mid-response. The response above may be incomplete.'
+
+--- Iteration 4 ---
+Generated 183 lines -> examples/x11-m1-handshake-asm/main.s
+Assemble+link OK.
+SMOKE TEST PASSED.
+
+=== RESULT: SUCCESS after 4/15 iteration(s) ===

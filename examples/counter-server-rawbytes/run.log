@@ -1,0 +1,27 @@
+=== NLC raw-bytes loop start: examples/counter-server-rawbytes (model=fable, max_iters=20) ===
+
+--- Iteration 1 ---
+Generated 3 bytes of hex -> examples/counter-server-rawbytes/main.hex
+WARNING: odd hex digit count, truncated last nibble.
+NOT A VALID ELF FILE:
+readelf: Error: examples/counter-server-rawbytes/app: Failed to read file's magic number
+
+--- Iteration 2 ---
+Generated 1100 bytes of hex -> examples/counter-server-rawbytes/main.hex
+NOT A VALID ELF FILE:
+readelf: Error: Not an ELF file - it has the wrong magic bytes at the start
+
+--- Iteration 3 ---
+Generated 1210 bytes of hex -> examples/counter-server-rawbytes/main.hex
+WARNING: odd hex digit count, truncated last nibble.
+NOT A VALID ELF FILE:
+readelf: Error: Not an ELF file - it has the wrong magic bytes at the start
+
+--- Iteration 4 ---
+Generated 1719 bytes of hex -> examples/counter-server-rawbytes/main.hex
+readelf validates the ELF header OK.
+SMOKE TEST FAILED (rc=1):
+curl failed with rc=1 on request 1. Server output so far:
+Listening on port 81262
+
+--- Iteration 5 ---
