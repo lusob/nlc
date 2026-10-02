@@ -1,8 +1,0 @@
-=== NLC asm loop start: examples/cube3d-asm (model=fable, max_iters=25) ===
-
---- Iteration 1 ---
-Generated 182 lines -> examples/cube3d-asm/main.s
-Assemble+link OK.
-SMOKE TEST PASSED.
-
-=== RESULT: SUCCESS after 1/25 iteration(s) ===

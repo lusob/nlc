@@ -60,23 +60,16 @@ iteration that passed / budget.
 | `mini-webserver` | C | 2/6 | 75,992 B |
 | `mini-webserver-asm` | asm | 2/8 | 1,784 B |
 | `mini-webserver-rawbytes` | raw bytes | 4/15 | 696 B |
-| `counter-server-rawbytes` | raw bytes | interrupted at iter 5 (no verdict logged) | — |
-| `plasma-demo-asm` | asm (terminal plasma) | 1/15 | 1,712 B |
-| `cube3d-asm` | asm (rotating wireframe cube, terminal) | 1/25 | 3,536 B |
-| `x11-m1-handshake-asm` … `x11-m6-fire-asm` | asm (X11 demoscene milestones) | all pass (1–4 iters) | 2.3–7 KB |
-| `doom-d1-input-asm` / `-d2-raycast-` / `-d3-playable-` | asm (playable raycaster) | all pass (d3: 2 iters) | 3.0–6.2 KB |
+| `x11-m1-handshake-asm` | asm (X11 handshake + auth) | 4/15 | — |
 | `tetris-t1-core-asm` | asm (playable Tetris on X11, explicit size-minimization exercise) | 2/25 | 6,752 B |
 
 Highlights:
 
 - **Raw-bytes tier works**: the model hand-encodes a valid ELF64 + machine
-  code — e.g. a 166-byte static hello-world, and a stateful HTTP server
-  (real counter arithmetic, correct Content-Length across digit growth) in
-  under 2 KB of hand-built ELF.
-- **X11 without libc**: the milestone series (`m1` handshake → `m2` window →
-  `m3/m4` shaded cube → `m5` scroller → `m6` fire → final combined demo)
-  talks to the X server over its Unix socket with raw syscalls, MIT-MAGIC-
-  COOKIE auth, and hand-packed request structs.
+  code — e.g. a 166-byte static hello-world and a 696-byte HTTP server.
+- **X11 without libc**: `x11-m1` (handshake) and the Tetris talk to the X
+  server over its Unix socket with raw syscalls, MIT-MAGIC-COOKIE auth, and
+  hand-packed request structs.
 - **Verification scales with difficulty**: simple examples verify output
   text; graphical/game examples pair `smoke_test.sh` with Python verifiers
   (`verify.py`) that parse frame dumps; servers are exercised with `curl`.
@@ -123,8 +116,7 @@ Intel laptop, native Linux x86-64). **Model: `claude-sonnet-5-5`** — not
 Notes: the first raw-bytes attempt failed 8/8 and 15/15 (an extra hex digit in
 a long zero run shifts every later ELF field). After `run_loop_rawbytes.sh`
 started feeding back the size and `readelf -lh` of the built file on smoke-test
-failure, both passed (the failed logs are kept as `run.v1-failed.log`). The
-`x11-m2`…`m6`, `final-demo` and Doom/cube/plasma examples have not been ported.
+failure, both passed (the failed logs are kept as `run.v1-failed.log`).
 
 X11 examples: `spec.md` contains `@@XAUTH_COOKIE@@` instead of a cookie; the
 harness fills it at run time from `xauth list $DISPLAY` (`harness/xauth_cookie.sh`).
@@ -133,9 +125,6 @@ authenticate as-is — re-run the loop on your own machine to regenerate them.
 
 ## Notes
 
-- `tmp/` holds one-off generators used while authoring specs (tetromino
-  bit-packing, 5x7 font, fire palette, sine tables) plus reference
-  implementations — not part of the harness.
 - Specs deliberately pin down every byte-level detail (struct layouts,
   endianness, syscall numbers, exact response strings) so the smoke test is
   unambiguous and failure feedback is actionable.
