@@ -73,6 +73,10 @@ Fix it. Output ONLY the corrected, complete raw assembly source, no markdown fen
   fi
 
   RAW_OUT="$(claude -p "$PROMPT" --model "$MODEL" --output-format text 2>>"$LOG_FILE")"
+  if echo "$RAW_OUT" | grep -qiE "hit your (session|usage) limit|requires usage credits"; then
+    log "ABORTED: model unavailable (usage limit): $RAW_OUT"
+    exit 2
+  fi
   echo "$RAW_OUT" | sed -e '/^```/d' > "$SRC_FILE"
 
   if [ ! -s "$SRC_FILE" ]; then

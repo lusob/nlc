@@ -1,0 +1,22 @@
+=== NLC asm loop start: results/x86_64-runs/run5/mini-webserver-asm (arch=x86_64, model=claude-sonnet-5-5, max_iters=8) ===
+
+--- Iteration 1 ---
+Generated 89 lines -> results/x86_64-runs/run5/mini-webserver-asm/main.s
+ASSEMBLE FAILED:
+results/x86_64-runs/run5/mini-webserver-asm/main.s: Assembler messages:
+results/x86_64-runs/run5/mini-webserver-asm/main.s:56: Error: expression is too complex to be resolved or converted into relocations
+results/x86_64-runs/run5/mini-webserver-asm/main.s:78: Error: expression is too complex to be resolved or converted into relocations
+
+--- Iteration 2 ---
+Generated 92 lines -> results/x86_64-runs/run5/mini-webserver-asm/main.s
+Assemble+link OK.
+SMOKE TEST FAILED (rc=1):
+curl failed with rc=18 (server output so far:)
+Listening on port 8124
+
+--- Iteration 3 ---
+Generated 92 lines -> results/x86_64-runs/run5/mini-webserver-asm/main.s
+Assemble+link OK.
+SMOKE TEST PASSED.
+
+=== RESULT: SUCCESS after 3/8 iteration(s) ===

@@ -66,6 +66,10 @@ Fix the program. Output ONLY the corrected, complete raw C source code, no markd
   fi
 
   RAW_OUT="$(claude -p "$PROMPT" --model "$MODEL" --output-format text 2>>"$LOG_FILE")"
+  if echo "$RAW_OUT" | grep -qiE "hit your (session|usage) limit|requires usage credits"; then
+    log "ABORTED: model unavailable (usage limit): $RAW_OUT"
+    exit 2
+  fi
 
   # Strip markdown fences if the model added them anyway.
   echo "$RAW_OUT" | sed -e '/^```/d' > "$SRC_FILE"

@@ -1,0 +1,8 @@
+=== NLC asm loop start: results/x86_64-runs/run4/hello-world-asm (arch=x86_64, model=claude-sonnet-5-5, max_iters=6) ===
+
+--- Iteration 1 ---
+Generated 15 lines -> results/x86_64-runs/run4/hello-world-asm/main.s
+Assemble+link OK.
+SMOKE TEST PASSED.
+
+=== RESULT: SUCCESS after 1/6 iteration(s) ===

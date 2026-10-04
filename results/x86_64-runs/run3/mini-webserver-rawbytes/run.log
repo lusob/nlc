@@ -1,0 +1,79 @@
+=== NLC raw-bytes loop start: results/x86_64-runs/run3/mini-webserver-rawbytes (arch=x86_64, model=claude-sonnet-5-5, max_iters=15) ===
+
+--- Iteration 1 ---
+Generated 69 bytes of hex -> results/x86_64-runs/run3/mini-webserver-rawbytes/main.hex
+NOT A VALID ELF FILE:
+readelf: Error: Not an ELF file - it has the wrong magic bytes at the start
+
+--- Iteration 2 ---
+Generated 693 bytes of hex -> results/x86_64-runs/run3/mini-webserver-rawbytes/main.hex
+NOT A VALID ELF FILE:
+readelf: Error: Not an ELF file - it has the wrong magic bytes at the start
+
+--- Iteration 3 ---
+Generated 66 bytes of hex -> results/x86_64-runs/run3/mini-webserver-rawbytes/main.hex
+NOT A VALID ELF FILE:
+readelf: Error: Not an ELF file - it has the wrong magic bytes at the start
+
+--- Iteration 4 ---
+Generated 96 bytes of hex -> results/x86_64-runs/run3/mini-webserver-rawbytes/main.hex
+NOT A VALID ELF FILE:
+readelf: Error: Not an ELF file - it has the wrong magic bytes at the start
+
+--- Iteration 5 ---
+Generated 119 bytes of hex -> results/x86_64-runs/run3/mini-webserver-rawbytes/main.hex
+WARNING: odd hex digit count, truncated last nibble.
+NOT A VALID ELF FILE:
+readelf: Error: Not an ELF file - it has the wrong magic bytes at the start
+
+--- Iteration 6 ---
+Generated 6 bytes of hex -> results/x86_64-runs/run3/mini-webserver-rawbytes/main.hex
+NOT A VALID ELF FILE:
+readelf: Error: results/x86_64-runs/run3/mini-webserver-rawbytes/app: Failed to read file's magic number
+
+--- Iteration 7 ---
+Generated 6 bytes of hex -> results/x86_64-runs/run3/mini-webserver-rawbytes/main.hex
+NOT A VALID ELF FILE:
+readelf: Error: results/x86_64-runs/run3/mini-webserver-rawbytes/app: Failed to read file's magic number
+
+--- Iteration 8 ---
+Generated 6 bytes of hex -> results/x86_64-runs/run3/mini-webserver-rawbytes/main.hex
+NOT A VALID ELF FILE:
+readelf: Error: results/x86_64-runs/run3/mini-webserver-rawbytes/app: Failed to read file's magic number
+
+--- Iteration 9 ---
+Generated 6 bytes of hex -> results/x86_64-runs/run3/mini-webserver-rawbytes/main.hex
+NOT A VALID ELF FILE:
+readelf: Error: results/x86_64-runs/run3/mini-webserver-rawbytes/app: Failed to read file's magic number
+
+--- Iteration 10 ---
+Generated 6 bytes of hex -> results/x86_64-runs/run3/mini-webserver-rawbytes/main.hex
+NOT A VALID ELF FILE:
+readelf: Error: results/x86_64-runs/run3/mini-webserver-rawbytes/app: Failed to read file's magic number
+
+--- Iteration 11 ---
+Generated 6 bytes of hex -> results/x86_64-runs/run3/mini-webserver-rawbytes/main.hex
+NOT A VALID ELF FILE:
+readelf: Error: results/x86_64-runs/run3/mini-webserver-rawbytes/app: Failed to read file's magic number
+
+--- Iteration 12 ---
+Generated 6 bytes of hex -> results/x86_64-runs/run3/mini-webserver-rawbytes/main.hex
+NOT A VALID ELF FILE:
+readelf: Error: results/x86_64-runs/run3/mini-webserver-rawbytes/app: Failed to read file's magic number
+
+--- Iteration 13 ---
+Generated 6 bytes of hex -> results/x86_64-runs/run3/mini-webserver-rawbytes/main.hex
+NOT A VALID ELF FILE:
+readelf: Error: results/x86_64-runs/run3/mini-webserver-rawbytes/app: Failed to read file's magic number
+
+--- Iteration 14 ---
+Generated 6 bytes of hex -> results/x86_64-runs/run3/mini-webserver-rawbytes/main.hex
+NOT A VALID ELF FILE:
+readelf: Error: results/x86_64-runs/run3/mini-webserver-rawbytes/app: Failed to read file's magic number
+
+--- Iteration 15 ---
+Generated 6 bytes of hex -> results/x86_64-runs/run3/mini-webserver-rawbytes/main.hex
+NOT A VALID ELF FILE:
+readelf: Error: results/x86_64-runs/run3/mini-webserver-rawbytes/app: Failed to read file's magic number
+
+=== RESULT: FAILED after 15 iteration(s) ===

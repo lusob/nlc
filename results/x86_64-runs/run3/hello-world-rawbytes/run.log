@@ -1,0 +1,23 @@
+=== NLC raw-bytes loop start: results/x86_64-runs/run3/hello-world-rawbytes (arch=x86_64, model=claude-sonnet-5-5, max_iters=8) ===
+
+--- Iteration 1 ---
+Generated 166 bytes of hex -> results/x86_64-runs/run3/hello-world-rawbytes/main.hex
+WARNING: odd hex digit count, truncated last nibble.
+readelf validates the ELF header OK.
+SMOKE TEST FAILED (rc=1):
+results/x86_64-runs/run3/hello-world-rawbytes/smoke_test.sh: line 4: results/x86_64-runs/run3/hello-world-rawbytes/app: cannot execute binary file: Exec format error
+Exit code was 126, expected 0
+
+--- Iteration 2 ---
+Generated 520 bytes of hex -> results/x86_64-runs/run3/hello-world-rawbytes/main.hex
+readelf validates the ELF header OK.
+SMOKE TEST FAILED (rc=1):
+results/x86_64-runs/run3/hello-world-rawbytes/smoke_test.sh: line 4: results/x86_64-runs/run3/hello-world-rawbytes/app: cannot execute binary file: Exec format error
+Exit code was 126, expected 0
+
+--- Iteration 3 ---
+Generated 167 bytes of hex -> results/x86_64-runs/run3/hello-world-rawbytes/main.hex
+readelf validates the ELF header OK.
+SMOKE TEST PASSED.
+
+=== RESULT: SUCCESS after 3/8 iteration(s) ===

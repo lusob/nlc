@@ -1,0 +1,15 @@
+=== NLC loop start: results/x86_64-runs/run5/mini-webserver (model=claude-sonnet-5-5, max_iters=6) ===
+
+--- Iteration 1 ---
+Generated 80 lines -> results/x86_64-runs/run5/mini-webserver/main.c
+Compile OK.
+SMOKE TEST FAILED (rc=1):
+curl failed with rc=18 (server output so far:)
+Listening on port 8123
+
+--- Iteration 2 ---
+Generated 80 lines -> results/x86_64-runs/run5/mini-webserver/main.c
+Compile OK.
+SMOKE TEST PASSED.
+
+=== RESULT: SUCCESS after 2/6 iteration(s) ===

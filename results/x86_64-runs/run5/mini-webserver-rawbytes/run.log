@@ -1,0 +1,21 @@
+=== NLC raw-bytes loop start: results/x86_64-runs/run5/mini-webserver-rawbytes (arch=x86_64, model=claude-sonnet-5-5, max_iters=15) ===
+
+--- Iteration 1 ---
+Generated 951 bytes of hex -> results/x86_64-runs/run5/mini-webserver-rawbytes/main.hex
+WARNING: odd hex digit count, truncated last nibble.
+NOT A VALID ELF FILE:
+readelf: Error: Not an ELF file - it has the wrong magic bytes at the start
+
+--- Iteration 2 ---
+Generated 437 bytes of hex -> results/x86_64-runs/run5/mini-webserver-rawbytes/main.hex
+readelf validates the ELF header OK.
+SMOKE TEST FAILED (rc=1):
+curl failed with rc=18 (server output so far:)
+Listening on port 8125
+
+--- Iteration 3 ---
+Generated 438 bytes of hex -> results/x86_64-runs/run5/mini-webserver-rawbytes/main.hex
+readelf validates the ELF header OK.
+SMOKE TEST PASSED.
+
+=== RESULT: SUCCESS after 3/15 iteration(s) ===

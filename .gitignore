@@ -11,3 +11,9 @@ results/*/*/verify.py
 results/*/*/app.o
 results/*/*/xxd_err.txt
 results/*/*/app
+results/*/*/*/app
+results/*/*/*/app.o
+results/*/*/*/xxd_err.txt
+results/*/*/*/spec*.md
+results/*/*/*/smoke_test.sh
+results/_invalid/

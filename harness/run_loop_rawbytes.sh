@@ -69,6 +69,10 @@ Fix it. Output ONLY the corrected, complete hex byte stream for the whole file, 
   fi
 
   RAW_OUT="$(claude -p "$PROMPT" --model "$MODEL" --output-format text 2>>"$LOG_FILE")"
+  if echo "$RAW_OUT" | grep -qiE "hit your (session|usage) limit|requires usage credits"; then
+    log "ABORTED: model unavailable (usage limit): $RAW_OUT"
+    exit 2
+  fi
   # Strip everything except hex digits (drop fences, whitespace, any stray prose char that isn't 0-9a-fA-F).
   echo "$RAW_OUT" | tr -cd '0-9a-fA-F' > "$HEX_FILE"
 

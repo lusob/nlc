@@ -1,0 +1,90 @@
+=== NLC raw-bytes loop start: results/x86_64-runs/run4/mini-webserver-rawbytes (arch=x86_64, model=claude-sonnet-5-5, max_iters=15) ===
+
+--- Iteration 1 ---
+Generated 416 bytes of hex -> results/x86_64-runs/run4/mini-webserver-rawbytes/main.hex
+readelf validates the ELF header OK.
+SMOKE TEST FAILED (rc=1):
+Server process exited early. Output:
+results/x86_64-runs/run4/mini-webserver-rawbytes/smoke_test.sh: line 16: results/x86_64-runs/run4/mini-webserver-rawbytes/app: cannot execute binary file: Exec format error
+
+--- Iteration 2 ---
+Generated 44 bytes of hex -> results/x86_64-runs/run4/mini-webserver-rawbytes/main.hex
+NOT A VALID ELF FILE:
+readelf: Error: results/x86_64-runs/run4/mini-webserver-rawbytes/app: Failed to read file header
+
+--- Iteration 3 ---
+Generated 66 bytes of hex -> results/x86_64-runs/run4/mini-webserver-rawbytes/main.hex
+WARNING: odd hex digit count, truncated last nibble.
+NOT A VALID ELF FILE:
+readelf: Error: Not an ELF file - it has the wrong magic bytes at the start
+
+--- Iteration 4 ---
+Generated 78 bytes of hex -> results/x86_64-runs/run4/mini-webserver-rawbytes/main.hex
+WARNING: odd hex digit count, truncated last nibble.
+NOT A VALID ELF FILE:
+readelf: Error: Not an ELF file - it has the wrong magic bytes at the start
+
+--- Iteration 5 ---
+Generated 52 bytes of hex -> results/x86_64-runs/run4/mini-webserver-rawbytes/main.hex
+NOT A VALID ELF FILE:
+readelf: Error: Not an ELF file - it has the wrong magic bytes at the start
+
+--- Iteration 6 ---
+Generated 111 bytes of hex -> results/x86_64-runs/run4/mini-webserver-rawbytes/main.hex
+NOT A VALID ELF FILE:
+readelf: Error: Not an ELF file - it has the wrong magic bytes at the start
+
+--- Iteration 7 ---
+Generated 67 bytes of hex -> results/x86_64-runs/run4/mini-webserver-rawbytes/main.hex
+WARNING: odd hex digit count, truncated last nibble.
+NOT A VALID ELF FILE:
+readelf: Error: Not an ELF file - it has the wrong magic bytes at the start
+
+--- Iteration 8 ---
+Generated 53 bytes of hex -> results/x86_64-runs/run4/mini-webserver-rawbytes/main.hex
+WARNING: odd hex digit count, truncated last nibble.
+NOT A VALID ELF FILE:
+readelf: Error: Not an ELF file - it has the wrong magic bytes at the start
+
+--- Iteration 9 ---
+Generated 124 bytes of hex -> results/x86_64-runs/run4/mini-webserver-rawbytes/main.hex
+WARNING: odd hex digit count, truncated last nibble.
+NOT A VALID ELF FILE:
+readelf: Error: Not an ELF file - it has the wrong magic bytes at the start
+
+--- Iteration 10 ---
+Generated 92 bytes of hex -> results/x86_64-runs/run4/mini-webserver-rawbytes/main.hex
+NOT A VALID ELF FILE:
+readelf: Error: Not an ELF file - it has the wrong magic bytes at the start
+
+--- Iteration 11 ---
+Generated 431 bytes of hex -> results/x86_64-runs/run4/mini-webserver-rawbytes/main.hex
+readelf validates the ELF header OK.
+SMOKE TEST FAILED (rc=1):
+results/x86_64-runs/run4/mini-webserver-rawbytes/smoke_test.sh: line 19: 777179 Segmentation fault      (core dumped) "$BIN" > "$OUT_FILE" 2>&1
+Server process exited early. Output:
+
+--- Iteration 12 ---
+Generated 113 bytes of hex -> results/x86_64-runs/run4/mini-webserver-rawbytes/main.hex
+NOT A VALID ELF FILE:
+readelf: Error: Not an ELF file - it has the wrong magic bytes at the start
+
+--- Iteration 13 ---
+Generated 424 bytes of hex -> results/x86_64-runs/run4/mini-webserver-rawbytes/main.hex
+readelf validates the ELF header OK.
+SMOKE TEST FAILED (rc=1):
+curl failed with rc=18 (server output so far:)
+Listening on port 8125
+
+--- Iteration 14 ---
+Generated 126 bytes of hex -> results/x86_64-runs/run4/mini-webserver-rawbytes/main.hex
+NOT A VALID ELF FILE:
+readelf: Error: Not an ELF file - it has the wrong magic bytes at the start
+
+--- Iteration 15 ---
+Generated 67 bytes of hex -> results/x86_64-runs/run4/mini-webserver-rawbytes/main.hex
+WARNING: odd hex digit count, truncated last nibble.
+NOT A VALID ELF FILE:
+readelf: Error: Not an ELF file - it has the wrong magic bytes at the start
+
+=== RESULT: FAILED after 15 iteration(s) ===
