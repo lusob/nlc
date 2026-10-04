@@ -152,3 +152,7 @@ First x86-64 run (single run, `claude-sonnet-5-5`):
 | `tetris-t1-core-asm` | asm (X11) | 5/25 | 8,032 B |
 
 Specs deliberately pin down every byte-level detail (struct layouts, endianness, syscall numbers, exact response strings), so the smoke test is unambiguous and the failure feedback is actionable.
+
+## License
+
+MIT, see [LICENSE](LICENSE).
